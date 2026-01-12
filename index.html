@@ -1,336 +1,204 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sultan Alrashed - AI Engineer & Researcher</title>
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #34495e;
-            --accent-color: #3498db;
-            --bg-color: #ffffff;
-            --text-color: #333333;
-            --card-bg: #f5f6fa;
-            --nav-bg: #34495e;
-            --header-bg: #2c3e50;
-        }
-
-        .dark {
-            --primary-color: #1a1a1a;
-            --secondary-color: #2d2d2d;
-            --accent-color: #4fa3d1;
-            --bg-color: #121212;
-            --text-color: #e0e0e0;
-            --card-bg: #1e1e1e;
-            --nav-bg: #1a1a1a;
-            --header-bg: #000000;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            transition: background-color 0.3s ease;
-        }
-
-        .profile-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 1.5rem;
-            border: 4px solid var(--text-color);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        header {
-            background: var(--header-bg);
-            color: var(--text-color);
-            padding: 4rem 0;
-            text-align: center;
-        }
-
-        .theme-toggle {
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 4px;
-            background: var(--accent-color);
-            color: white;
-            cursor: pointer;
-            z-index: 1001;
-            transition: background-color 0.3s;
-        }
-
-        .theme-toggle:hover {
-            background: #2980b9;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-
-        .subtitle {
-            color: var(--text-color);
-            font-size: 1.2rem;
-            margin-top: 0.5rem;
-        }
-
-        .contact {
-            margin-top: 1rem;
-        }
-
-        .contact a {
-            color: var(--text-color);
-            text-decoration: none;
-            margin: 0 1rem;
-        }
-
-        .contact a:hover {
-            text-decoration: underline;
-        }
-
-        nav {
-            background: var(--nav-bg);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .nav-container {
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        .nav-link {
-            color: var(--text-color);
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        .nav-link:hover {
-            background-color: var(--accent-color);
-        }
-
-        section {
-            margin: 3rem 0;
-            scroll-margin-top: 5rem;
-        }
-
-        h2 {
-            color: var(--text-color);
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.5rem;
-        }
-
-        .project, .publication, .experience {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-radius: 8px;
-            transition: background-color 0.3s;
-        }
-
-        .project h3, .publication h3, .experience h3 {
-            margin-top: 0;
-            color: var(--text-color);
-        }
-
-        .project a, .publication a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-
-        .project a:hover, .publication a:hover {
-            text-decoration: underline;
-        }
-
-        .role-details {
-            color: var(--text-color);
-            opacity: 0.8;
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-
-        .achievements {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .achievements li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .achievements li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sultan Alrashed - Research Engineer at KAUST, focused on LLM pretraining and Arabic NLP">
+  <title>Sultan Alrashed</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
-    
-    <header>
-        <div class="container">
-            <img src="sultan.png" alt="Sultan Alrashed Pixel Art" class="profile-image">
-            <h1>Sultan Alrashed</h1>
-            <div class="subtitle">AI Engineer & Researcher</div>
-            <div class="contact">
-                <a href="mailto:sultan.m.rashed@gmail.com">Email</a>
-                <a href="https://linkedin.com/in/sulrash">LinkedIn</a>
-                <a href="https://github.com/sulrash">GitHub</a>
-                <a href="https://huggingface.co/SultanR">Huggingface</a>
-            </div>
+  <div class="container">
+
+    <!-- Header -->
+    <header class="cv-header">
+      <h1>Sultan Alrashed</h1>
+      <div class="cv-intro">
+        <img src="headshot.JPG" alt="Sultan Alrashed" class="headshot">
+        <div class="intro-text">
+          <p>
+            Research engineer at KAUST (in Prof. Francesco Orabona's lab) working on pretraining bilingual Arabic-English LLMs.
+            I've spent the last few years getting my hands dirty with large-scale distributed training! Most recent thing I've done is release a SOTA Arabic pretraining dataset (AraMix).
+          </p>
+          <p>
+            Previously at SDAIA as a founding member of the ALLaM team, where I helped build Saudi Arabia's
+            flagship Arabic language model.
+          </p>
         </div>
+        <div class="contact-info">
+          <a href="https://linkedin.com/in/sulrash">linkedin.com/in/sulrash</a>
+          <span class="separator">•</span>
+          <a href="https://github.com/sulrash">github.com/sulrash</a>
+          <span class="separator">•</span>
+          <a href="https://huggingface.co/SultanR">huggingface.co/SultanR</a>
+        </div>
+      </div>
     </header>
 
-    <nav>
-        <div class="nav-container">
-            <a href="#publications" class="nav-link">Publications</a>
-            <a href="#experience" class="nav-link">Experience</a>
-            <a href="#projects" class="nav-link">Projects</a>
+      <!-- Experience -->
+      <details class="cv-section" open>
+        <summary><h2>Experience</h2></summary>
+  
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Research Engineer</span>
+            <span class="entry-date">Jan. 2025 — Current</span>
+          </div>
+          <div class="entry-subtitle">
+            <span class="entry-org">King Abdullah University of Science & Technology (KAUST)</span>
+            <span class="entry-location">Thuwal, SA</span>
+          </div>
+          <p class="entry-desc">Research engineer in the <a href="https://sites.google.com/view/optimal-lab/home">OPTIMAL lab</a> under <a href="https://francesco.orabona.com">Prof. Francesco Orabona</a>. Leading development of a bilingual Arabic-English LLM at the 3B parameter and 5T token scale.</p>
         </div>
-    </nav>
+  
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Artificial Intelligence Engineer</span>
+            <span class="entry-date">Jan. 2023 — Jan. 2025</span>
+          </div>
+          <div class="entry-subtitle">
+            <span class="entry-org">Saudi Data & Artificial Intelligence Authority (SDAIA)</span>
+            <span class="entry-location">Riyadh, SA</span>
+          </div>
+          <p class="entry-desc">Founding member of the ALLaM team, worked across the full LLM pipeline because of our initial understaffing.</p>
+        </div>
+  
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Research Engineering Fellowship</span>
+            <span class="entry-date">Apr. 2024 — Oct. 2024</span>
+          </div>
+          <div class="entry-subtitle">
+            <span class="entry-org">KAUST & SDAIA Partnership</span>
+            <span class="entry-location">Thuwal, SA</span>
+          </div>
+          <p class="entry-desc">Selected for a fellowship program where I focused on AI for education. Built an AI-based learning management system for the Ministry of Education that I presented to the Minister at GAIN 2024. System started piloting in public schools.</p>
+        </div>
+      </details>
 
-    <main class="container">
-        <section id="publications"></section>
-            <h2>Publications & Preprints</h2>
-            <div class="publication">
-                <h3>SmolTulu: Higher Learning Rate to Batch Size Ratios can lead to Better Reasoning in SLMs</h3>
-                <p>Demonstrated that task-dependent learning rate to batch size ratios significantly impact small language model performance during SFT, achieving state-of-the-art results in sub-2B parameter SLMs.</p>
-                <a href="https://arxiv.org/abs/2412.08347">Read Paper →</a>
-            </div>
-            <div class="publication">
-                <h3>Fineweb-Edu-Ar: Machine Translated Educational Corpus for Small Arabic Language Models</h3>
-                <p>Created largest open-source machine translated Arabic educational dataset to support development of Arabic small language models.</p>
-                <a href="https://arxiv.org/abs/2411.06402">Read Paper →</a>
-            </div>
-            <div class="publication">
-                <h3>Tutoring tutors: Online Generation of Educational Preference Data</h3>
-                <p>Novel pipeline for generating educational preference alignment data and improving model tutoring performance through online feedback. (Under Review at ARR)</p>
-            </div>
-            <div class="publication">
-                <h3>ALLaM: Large Language Models for Arabic and English</h3>
-                <p>Paper describing ALLaM's training process and benchmarks leading to state-of-the-art Arabic-English performance.</p>
-                <a href="https://arxiv.org/abs/2407.15390">Read Paper →</a>
-            </div>
-            <div class="publication">
-                <h3>When Benchmarks are Targets: Revealing the Sensitivity of Large Language Model Leaderboards</h3>
-                <p>Analysis of LLM evaluation sensitivity to structural perturbations in benchmarks.</p>
-                <a href="https://aclanthology.org/2024.acl-long.744/">Read Paper →</a>
-            </div>
-        </section>
+    <!-- Publications -->
+    <details class="cv-section" open>
+      <summary><h2>Publications & Preprints</h2></summary>
 
-        <section id="experience">
-            <h2>Experience</h2>
-            <div class="experience">
-                <h3>Research Specialist</h3>
-                <div class="role-details">King Abdullah University of Science & Technology (KAUST) | Present</div>
-                <p>First research specialist hired by Prof. Francesco Orabona in the OPTIMAL Lab, conducting multilingual natural language processing research alongside PhD students and postdocs.</p>
-            </div>
-            <div class="experience">
-                <h3>Research Engineer - Joint SDAIA & KAUST Fellowship Program</h3>
-                <div class="role-details">King Abdullah University of Science & Technology | Apr. 2024 - Oct. 2024</div>
-                <ul class="achievements">
-                    <li>Proposed and implemented parallelized translation pipeline using NLLB, creating largest open-source machine translated Arabic dataset</li>
-                    <li>Part of team to release the first version of Taleem presented at 3rd GAIN summit</li>
-                    <li>Engineered AI components of Kaleem, a real-time AI tutoring system</li>
-                    <li>Architected multilingual vector database containing Saudi Arabian curriculum</li>
-                </ul>
-            </div>
-            <div class="experience">
-                <h3>Artificial Intelligence Engineer</h3>
-                <div class="role-details">Saudi Data & Artificial Intelligence Authority (SDAIA) | Feb. 2023 - Dec. 2024</div>
-                <ul class="achievements">
-                    <li>Founding member of the ALLaM team, developing state-of-the-art multilingual Arabic-English language model</li>
-                    <li>Lead engineer in multimodal alignment team</li>
-                    <li>Extended Megatron-LM to support diverse dataset structures</li>
-                    <li>Developed scalable reinforcement learning with human feedback framework</li>
-                </ul>
-            </div>
-            <div class="experience">
-                <h3>Peer-Assisted Study Session (PASS) Leader</h3>
-                <div class="role-details">University of Manchester | Sep. 2021 - Jul. 2022</div>
-                <p>Led initiative to mentor students in computer science algorithms and mathematical foundations of machine learning. Organized technical workshops on programming concepts.</p>
-            </div>
-        </section>
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>HuggingFace Text Data Analyzer</h3>
-                <p>A Python pip package for analyzing text datasets from HuggingFace. Combines basic text statistics with NLP capabilities like language detection and sentiment analysis. Optimized for large-scale datasets with batch processing and two-level caching.</p>
-                <a href="https://github.com/SulRash/huggingface-text-data-analyzer">View Project →</a>
-            </div>
-            <div class="project">
-                <h3>Sage LLMs</h3>
-                <p>A collection of finetuned Gemma-2-it models with LoRAs using educational content filtered from Fineweb and writing advice generated by Claude-3.5.</p>
-                <a href="https://huggingface.co/SultanR/sage-27b-it-lora">View Project →</a>
-            </div>
-            <div class="project">
-                <h3>Environment Encoder</h3>
-                <p>An approach to making reinforcement learning agents more environment agnostic by training them on vision-language model embeddings instead of raw environment states.</p>
-                <a href="https://github.com/SulRash/envenc">View Project →</a>
-            </div>
-            <div class="project">
-                <h3>EasyRogue</h3>
-                <p>A roguelike game written in Python that runs in the command line and supports RGB GUI. Built as a testbed for comparing perfect vs imperfect information in reinforcement learning agents.</p>
-                <a href="https://github.com/SulRash/EasyRogue">View Project →</a>
-            </div>
-            <div class="project">
-                <h3>Next-Token Agent</h3>
-                <p>An experiment in training tiny language models from scratch to play ASCII games by predicting successive frames.</p>
-                <a href="https://github.com/SulRash/ntaGPT">View Project →</a>
-            </div>
-            <div class="project">
-                <h3>minLLMTrain</h3>
-                <p>A barebones LLM pretraining codebase implementing DeepSpeed and dataset packing while maintaining readable code and minimal abstraction.</p>
-                <a href="https://github.com/SulRash/minLLMTrain">View Project →</a>
-            </div>
-            <div class="project">
-                <h3>Cheatsheet</h3>
-                <p>A computer vision project exploring novel image augmentation strategy and training objective where the model learns ordering but downstreams to classification.</p>
-                <a href="https://github.com/SulRash/Cheatsheet">View Project →</a>
-            </div>
-        </section>
-    </main>
+      <div class="publication">
+        <span class="pub-tag">First Author</span>
+        <span class="pub-venue">EACL Findings 2026</span><br>
+        <a href="https://openreview.net/forum?id=0HF2Dg0Ldx" class="pub-title">Cards Against Contamination: TCG-Bench for Difficulty-Scalable Multilingual LLM Reasoning</a>
+        <div class="pub-desc">A contamination-resistant English/Arabic text-game suite with scalable difficulty.</div>
+      </div>
 
-    <script>
-        function toggleTheme() {
-            document.documentElement.classList.toggle('dark');
-            
-            // Save preference
-            const isDark = document.documentElement.classList.contains('dark');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        }
+      <div class="publication">
+        <span class="pub-tag">First Author</span>
+        <span class="pub-venue">Arxiv 2025</span><br>
+        <a href="https://huggingface.co/datasets/AdaMLLab/AraMix" class="pub-title">AraMix: Recycling, Refiltering, and Deduplicating to Deliver the Largest Arabic Pretraining Corpus</a>
+        <div class="pub-desc">Introduces the largest and best performing Arabic pretraining dataset at 178B tokens. Uses novel cross-dataset agreement metric as a quality signal.</div>
+      </div>
 
-        // Check for saved theme preference
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        if (savedTheme === 'light') {
-            document.documentElement.classList.remove('dark');
-        }
-    </script>
+      <div class="publication">
+        <span class="pub-tag">First Author</span>
+        <span class="pub-venue">Arxiv 2025</span><br>
+        <a href="https://arxiv.org/abs/2511.18411" class="pub-title">SmolKalam: Ensemble Quality-Filtered Translation at Scale for High Quality Arabic Post-Training Data</a>
+        <div class="pub-desc">Introduces the largest multi-turn, tool-calling, reasoning-inclusive Arabic post-training dataset, at around 2B tokens.</div>
+      </div>
+
+      <div class="publication">
+        <span class="pub-tag">Co-Author</span>
+        <span class="pub-venue">Arxiv 2025</span><br>
+        <a href="https://arxiv.org/abs/2510.19933" class="pub-title">Beyond the Ideal: Analyzing the Inexact Muon Update</a>
+        <div class="pub-desc">Analysis of Muon's inexact orthogonalized update with performance bounds under an additive-error LMO framework.</div>
+      </div>
+
+      <div class="publication">
+        <span class="pub-tag">Co-Author</span>
+        <span class="pub-venue">Arxiv 2025</span><br>
+        <a href="https://arxiv.org/abs/2510.24081" class="pub-title">Global PIQA: Evaluating Physical Commonsense Reasoning Across 100+ Languages and Cultures</a>
+        <div class="pub-desc">Wrote the Arabic Saudi dialect portion of a multilingual version of the PIQA benchmark.</div>
+      </div>
+
+      <div class="publication">
+        <span class="pub-tag">Co-Author</span>
+        <span class="pub-venue">ICML 2025 World Models Workshop</span><br>
+        <a href="https://openreview.net/forum?id=Z4KBiAYXlI" class="pub-title">ReviseQA: A Benchmark for Belief Revision in Multi-Turn Logical Reasoning</a>
+        <div class="pub-desc">Benchmark testing logical consistency under iterative context updates.</div>
+      </div>
+
+      <div class="publication">
+        <span class="pub-tag">First Author</span>
+        <span class="pub-venue">Arxiv 2024</span><br>
+        <a href="https://arxiv.org/abs/2411.06402" class="pub-title">Fineweb-Edu-Ar: Machine-translated Corpus to Support Arabic Small Language Models</a>
+        <div class="pub-desc">Introduces a machine-translated Arabic corpus derived from FineWeb-Edu (202B tokens) for training and evaluating Arabic language models, the largest at the time.</div>
+      </div>
+
+      <div class="publication">
+        <span class="pub-tag">Solo Author</span>
+        <span class="pub-venue">Arxiv 2024</span><br>
+        <a href="https://arxiv.org/abs/2412.08347" class="pub-title">SmolTulu: Higher Learning Rate to Batch Size Ratios Can Lead to Better Reasoning in SLMs</a>
+        <div class="pub-desc">Shows that higher LR:batch-size ratios can boost reasoning in small LMs. Achieved the highest IFEval score of any sub-3B model at release.</div>
+      </div>
+
+      <div class="publication">
+        <span class="pub-tag">Co-Author</span>
+        <span class="pub-venue">ICLR 2025</span><br>
+        <a href="https://arxiv.org/abs/2407.15390" class="pub-title">ALLaM: A Series of Large Language Models for Arabic and English</a>
+        <div class="pub-desc">SDAIA's bilingual Arabic/English pretrained LLM series. Initially was on pretraining, later focused on finetuning and alignment as the team scaled.</div>
+      </div>
+
+      <div class="publication">
+        <span class="pub-tag">Co-Author</span>
+        <span class="pub-venue">ACL Main Conference 2024</span><br>
+        <a href="https://arxiv.org/abs/2402.01781" class="pub-title">When Benchmarks are Targets: Revealing the Sensitivity of Large Language Model Leaderboards</a>
+        <div class="pub-desc">A deep dive into the sensitivity of LLM benchmarks and evaluations to minor structural perturbations, many results contributed to LM-Harness.</div>
+      </div>
+    </details>
+
+    <!-- Projects -->
+    <details class="cv-section" open>
+      <summary><h2>Projects & Volunteering</h2></summary>
+
+      <div class="project">
+        <span class="project-name"><a href="https://github.com/pytorch/captum">PyTorch Captum Contributions</a></span>
+        <span class="project-desc">Improved support for LLMs in PyTorch's Captum repository, adding support for a larger range of models and tasks.</span>
+      </div>
+
+      <div class="project">
+        <span class="project-name"><a href="https://github.com/Microsoft/Megatron-DeepSpeed">Megatron-Deepspeed Contributions</a></span>
+        <span class="project-desc">Fixed backwards compatibility bug.</span>
+      </div>
+
+      <div class="project">
+        <span class="project-name"><a href="https://github.com/huggingface/lighteval">Lighteval Contributions</a></span>
+        <span class="project-desc">Added quantization support for vLLM models.</span>
+      </div>
+
+      <div class="project">
+        <span class="project-name"><a href="https://github.com/huggingface/nanotron">Nanotron Contributions</a></span>
+        <span class="project-desc">Fixed bugs to get pretraining example in docs to work.</span>
+      </div>
+
+      <div class="project">
+        <span class="project-name"><a href="https://github.com/SulRash/ntaGPT">Next-Token Agent</a></span>
+        <span class="project-desc">A project focused on pretraining and finetuning tiny language models to solve ASCII games by predicting each successive frame, able to perfectly solve mazes from (<code>frozenlake</code>).</span>
+      </div>
+
+      <div class="project">
+        <span class="project-name"><a href="https://github.com/SulRash/envenc">Environment Encoder</a></span>
+        <span class="project-desc">A proposal and implementation of an idea to train a reinforcement learning agent to play games given a vision-language model's embeddings, instead of frames.</span>
+      </div>
+
+      <div class="project">
+        <span class="project-name"><a href="https://github.com/SulRash/Graduation-Project">Reinforcement Learning Roguelike Solver</a></span>
+        <span class="project-desc">For my university honours project, I wrote PPO, DQN, and A2C agents to compare effects of perfect and imperfect information on my CLI game.</span>
+      </div>
+
+      <div class="project">
+        <span class="project-name"><a href="https://github.com/SulRash/Cheatsheet">Cheatsheet</a></span>
+        <span class="project-desc">A never finished project that implements a new augmentation and objective for learning classification for computer vision models.</span>
+      </div>
+    </details>
+
+  </div>
 </body>
 </html>
